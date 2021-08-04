@@ -74,7 +74,7 @@ namespace api.Controllers
         {
             try
             {
-                var httpRequest = Request.Form;
+                var httpRequest = Request.Form; 
                 var postedFile = httpRequest.Files[0];
                 string filename = postedFile.FileName;
                 var physicalPath = _env.ContentRootPath + "/Photos/" + filename;
