@@ -23,3 +23,16 @@ C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-d
 C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\obj\Debug\netcoreapp3.1\api.dll
 C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\obj\Debug\netcoreapp3.1\api.pdb
 C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\obj\Debug\netcoreapp3.1\api.genruntimeconfig.cache
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\DnsClient.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\SharpCompress.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\runtimes\linux\native\libmongocrypt.so
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\wyz0x\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-mongodb\api\api\bin\Debug\netcoreapp3.1\runtimes\win\native\mongocrypt.dll
