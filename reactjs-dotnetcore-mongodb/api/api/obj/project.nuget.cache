@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "/myQSLBwZuhO3VzzcFWdBZdWMv3R3KZZdi9kbKupWkQOI0J7pxjMKPMXZmT2XX/n8nFYsBgtPBtvvoiWCJapgQ==",
+  "dgSpecHash": "RCFtKj9W79ECsBvTIiz647o4ob3OAAWVYzwfHTdd3Y9NYYf+dVIdYH52cvRQBCYQctrWyJ5l8HPhkfLYvAECfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\wyz0x\\Desktop\\fullstack-quick-webapp-dotnet-react-vue-angular\\reactjs-dotnetcore-mongodb\\api\\api\\api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\wyz0x\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.17\\microsoft.aspnetcore.jsonpatch.3.1.17.nupkg.sha512",
+    "C:\\Users\\wyz0x\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.17\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.17.nupkg.sha512",
+    "C:\\Users\\wyz0x\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\wyz0x\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\wyz0x\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
   "logs": []
 }
