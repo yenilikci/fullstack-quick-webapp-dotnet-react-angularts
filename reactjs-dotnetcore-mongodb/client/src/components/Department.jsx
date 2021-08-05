@@ -17,7 +17,7 @@ export class Department extends Component {
         fetch(variables.API_URL + 'department')
             .then(response => response.json())
             .then(data => {
-                this.setState({ departments: data, departmentsWithoutFilter: data });
+                this.setState({ departments: data});
             });
     }
 
