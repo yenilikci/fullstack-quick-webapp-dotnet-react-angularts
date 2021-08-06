@@ -126,7 +126,7 @@ export class Department extends Component {
         >
           Add Department
         </button>
-        <table className="table table-striped shadow">
+        <table className="table table-striped shadow bg-dark text-white">
           <thead>
             <tr>
               <th>DepartmentId</th>
@@ -189,7 +189,7 @@ export class Department extends Component {
           aria-hidden="true"
         >
           <div className="modal-dialog modal-lg modal-dialog-centered">
-            <div className="modal-content">
+            <div className="modal-content bg-dark text-white">
               <div className="modal-header">
                 <h5 className="modal-title">{modalTitle}</h5>
                 <button
@@ -211,10 +211,10 @@ export class Department extends Component {
               </div>
               <div className="modal-body">
                 <div className="input-group mb-3">
-                  <span className="input-group-text">DepartmentName</span>
+                  <span className="input-group-text bg-dark text-white">DepartmentName</span>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control bg-dark text-primary"
                     value={DepartmentName}
                     onChange={this.changeDepartmentName}
                   />

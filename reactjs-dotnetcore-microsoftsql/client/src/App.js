@@ -9,18 +9,18 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App container">
-        <h3 className="d-flex justify-content-center m-3">React JS Frontend</h3>
+        <h3 className="d-flex justify-content-center m-3 text-white">React JS Frontend</h3>
 
-        <nav className="navbar navbar-expand-sm bg-light navbar-dark my-3">
+        <nav className="navbar navbar-expand-sm bg-dark navbar-dark my-3">
           <ul className="navbar-nav">
             <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/home">
+              <NavLink className="btn btn-dark btn-outline-danger shadow" to="/home">
                 Home
               </NavLink>
             </li>
             <li className="nav-item m-1">
               <NavLink
-                className="btn btn-light btn-outline-primary"
+                className="btn btn-dark btn-outline-success shadow"
                 to="/department"
               >
                 Department
@@ -28,7 +28,7 @@ function App() {
             </li>
             <li className="nav-item m-1">
               <NavLink
-                className="btn btn-light btn-outline-primary"
+                className="btn btn-dark btn-outline-warning shadow"
                 to="/employee"
               >
                 Employee
