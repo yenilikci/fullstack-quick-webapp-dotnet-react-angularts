@@ -132,12 +132,13 @@
               />
             </div>
           </div>
-          <div class="d-flex flex-row bd-highlight mb-3">
+          <div class="p-2 w-50 bd-highlight">
             <img
-              width="250px"
-              height="250px"
+              width="100"
+              height="100"
               [src]="PhotoPath + PhotoFileName"
             />
+            <input type="file" class="m-2" (change)="imageUpload($event)">
           </div>
         </div>
 
