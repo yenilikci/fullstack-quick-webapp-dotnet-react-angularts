@@ -6,24 +6,129 @@ export class Department extends Component {
     super(props);
     this.state = {
       departments: [],
+      modalTitle: "",
+      DepartmentName: "",
+      DepartmentId: 0,
     };
   }
 
   refreshList() {
     fetch(variables.API_URL + "department")
       .then((response) => response.json())
-      .then((data) => this.setState({ departments: data }));
+      .then((data) => {
+        this.setState({ departments: data, departmentsWithoutFilter: data });
+      });
   }
 
   componentDidMount() {
     this.refreshList();
   }
 
+  changeDepartmentName = (e) => {
+    this.setState({ DepartmentName: e.target.value });
+  };
+
+  addClick() {
+    this.setState({
+      modalTitle: "Add Department",
+      DepartmentId: 0,
+      DepartmentName: "",
+    });
+  }
+
+  editClick(dep) {
+    this.setState({
+      modalTitle: "Edit Department",
+      DepartmentId: dep.DepartmentId,
+      DepartmentName: dep.DepartmentName,
+    });
+  }
+
+  createClick() {
+    fetch(variables.API_URL + "department", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        DepartmentName: this.state.DepartmentName,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          alert(result);
+          this.refreshList();
+        },
+        (error) => {
+          alert("Failed");
+        }
+      );
+  }
+
+  updateClick() {
+    fetch(variables.API_URL + "department", {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        DepartmentId: this.state.DepartmentId,
+        DepartmentName: this.state.DepartmentName,
+      }),
+    })
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          alert(result);
+          this.refreshList();
+        },
+        (error) => {
+          alert("Failed");
+        }
+      );
+  }
+
+  deleteClick(id) {
+    if (window.confirm("Are you sure")) {
+      fetch(variables.API_URL + "department/" + id, {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            alert(result);
+            this.refreshList();
+          },
+          (error) => {
+            alert("Failed");
+          }
+        );
+    }
+  }
+
   render() {
-    const { departments } = this.state;
+    //state destruct
+    const { departments, modalTitle, DepartmentName, DepartmentId } =
+      this.state;
 
     return (
       <div>
+        <button
+          type="button"
+          className="btn btn-primary m-2 float-end"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          onClick={() => this.addClick()}
+        >
+          Add Department
+        </button>
         <table className="table table-striped shadow">
           <thead>
             <tr>
@@ -40,7 +145,10 @@ export class Department extends Component {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-warning btn-outline-dark mr-1 text-white shadow"
+                    className="btn btn-warning mr-1 text-white shadow"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    onClick={() => this.editClick(dep)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +164,8 @@ export class Department extends Component {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-danger btn-outline-dark mr-1 text-white shadow"
+                    className="btn btn-danger mr-1 text-white shadow"
+                    onClick={() => this.deleteClick(dep.DepartmentId)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +184,66 @@ export class Department extends Component {
             ))}
           </tbody>
         </table>
+
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex="-1"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog modal-lg modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{modalTitle}</h5>
+                <button
+                  type="button"
+                  className="btn btn-danger mr-1 text-white shadow"
+                  data-bs-dismiss="modal"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    className="bi bi-x-lg"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
+                  </svg>
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="input-group mb-3">
+                  <span className="input-group-text">DepartmentName</span>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={DepartmentName}
+                    onChange={this.changeDepartmentName}
+                  />
+                </div>
+                {DepartmentId === 0 ? (
+                  <button
+                    type="button"
+                    className="btn btn-primary float-start"
+                    onClick={() => this.createClick()}
+                  >
+                    Create
+                  </button>
+                ) : null}
+                {DepartmentId !== 0 ? (
+                  <button
+                    type="button"
+                    className="btn btn-primary float-start"
+                    onClick={() => this.updateClick()}
+                  >
+                    Update
+                  </button>
+                ) : null}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
