@@ -23,3 +23,4 @@ C:\Users\Nusret\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-
 C:\Users\Nusret\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-postgresql\api\api\obj\Debug\netcoreapp3.1\api.dll
 C:\Users\Nusret\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-postgresql\api\api\obj\Debug\netcoreapp3.1\api.pdb
 C:\Users\Nusret\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-postgresql\api\api\obj\Debug\netcoreapp3.1\api.genruntimeconfig.cache
+C:\Users\Nusret\Desktop\fullstack-quick-webapp-dotnet-react-vue-angular\reactjs-dotnetcore-postgresql\api\api\bin\Debug\netcoreapp3.1\Npgsql.dll

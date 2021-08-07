@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zqfAlo+VEjVyPTIAscicYzl6a4MR/eHNfvzvh2MIAJwnmTMtIMm36XDRQIUkMlxU0XPDCjjyDCM5pb1xeTVYkA==",
+  "dgSpecHash": "Tw4+zPJReqa9efeXy2VYKggUdp/DbLjnAvhWNQbHwzIzudFhUHx6kR2W9gmyerdEbFYuNLB2/nXyAwnQZtN5sg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nusret\\Desktop\\fullstack-quick-webapp-dotnet-react-vue-angular\\reactjs-dotnetcore-postgresql\\api\\api\\api.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,9 @@
     "C:\\Users\\Nusret\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.17\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.17.nupkg.sha512",
     "C:\\Users\\Nusret\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Nusret\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
-    "C:\\Users\\Nusret\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    "C:\\Users\\Nusret\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Nusret\\.nuget\\packages\\npgsql\\5.0.7\\npgsql.5.0.7.nupkg.sha512",
+    "C:\\Users\\Nusret\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
   ],
   "logs": []
 }
