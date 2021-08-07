@@ -200,7 +200,7 @@ export class Employee extends Component {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-warning mr-1 text-white shadow"
+                    className="btn btn-warning mx-1 text-white shadow"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={() => this.editClick(emp)}
@@ -219,7 +219,7 @@ export class Employee extends Component {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-danger mr-1 text-white shadow"
+                    className="btn btn-danger mx-1 text-white shadow"
                     onClick={() => this.deleteClick(emp.EmployeeId)}
                   >
                     <svg
@@ -271,7 +271,9 @@ export class Employee extends Component {
                 <div className="d-flex flex-row bd-highlight mb-3">
                   <div className="p-2 w-50 bd-highlight">
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Employee Name</span>
+                      <span className="input-group-text bg-dark text-white">
+                        Employee Name
+                      </span>
                       <input
                         type="text"
                         className="form-control"
@@ -281,7 +283,9 @@ export class Employee extends Component {
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">Department</span>
+                      <span className="input-group-text bg-dark text-white">
+                        Department
+                      </span>
                       <select
                         className="form-select"
                         onChange={this.changeDepartment}
@@ -296,7 +300,9 @@ export class Employee extends Component {
                     </div>
 
                     <div className="input-group mb-3">
-                      <span className="input-group-text">DoJ</span>
+                      <span className="input-group-text bg-dark text-white">
+                        DoJ
+                      </span>
                       <input
                         type="date"
                         className="form-control"
@@ -314,7 +320,7 @@ export class Employee extends Component {
                     />
                     <input
                       type="file"
-                      className="m-2"
+                      className="m-2 bg-dark text-white shadow btn-dark btn"
                       onChange={this.imageUpload}
                     />
                   </div>
