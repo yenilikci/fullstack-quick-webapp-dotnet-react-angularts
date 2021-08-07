@@ -141,6 +141,20 @@ export class Employee extends Component {
     }
   }
 
+  imageUpload = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("files", e.target.files[0], e.target.files[0].name);
+    fetch(variables.API_URL + "employee/savefile", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ PhotoFileName: data });
+      });
+  };
+
   render() {
     //state destruct
     const {
@@ -297,6 +311,11 @@ export class Employee extends Component {
                       height="250px"
                       src={PhotoPath + PhotoFileName}
                       alt={PhotoFileName}
+                    />
+                    <input
+                      type="file"
+                      className="m-2"
+                      onChange={this.imageUpload}
                     />
                   </div>
                 </div>
