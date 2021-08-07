@@ -173,7 +173,7 @@ export class Employee extends Component {
       <div>
         <button
           type="button"
-          className="btn btn-primary m-2 float-end"
+          className="btn btn-sm btn-dark m-2 p-3 float-end"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
           onClick={() => this.addClick()}
@@ -200,7 +200,7 @@ export class Employee extends Component {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-warning mr-1 text-white shadow"
+                    className="btn btn-sm btn-outline-warning mx-1 text-white shadow"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={() => this.editClick(emp)}
@@ -219,7 +219,7 @@ export class Employee extends Component {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-danger mr-1 text-white shadow"
+                    className="btn btn-sm mx-1 btn-outline-danger text-white shadow"
                     onClick={() => this.deleteClick(emp.EmployeeId)}
                   >
                     <svg

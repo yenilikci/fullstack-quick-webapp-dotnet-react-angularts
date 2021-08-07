@@ -9,8 +9,55 @@ export class Department extends Component {
       modalTitle: "",
       DepartmentName: "",
       DepartmentId: 0,
+
+      DepartmentIdFilter: "",
+      DepartmentNameFilter: "",
+      departmentsWithoutFilter: [],
     };
   }
+
+  filterFn() {
+    var DepartmentIdFilter = this.state.DepartmentIdFilter;
+    var DepartmentNameFilter = this.state.DepartmentNameFilter;
+
+    var filteredData = this.state.departmentsWithoutFilter.filter(function (
+      el
+    ) {
+      return (
+        el.DepartmentId.toString()
+          .toLowerCase()
+          .includes(DepartmentIdFilter.toString().trim().toLowerCase()) &&
+        el.DepartmentName.toString()
+          .toLowerCase()
+          .includes(DepartmentNameFilter.toString().trim().toLowerCase())
+      );
+    });
+
+    this.setState({ departments: filteredData });
+  }
+
+  sortResult(prop, asc) {
+    var sortedData = this.state.departmentsWithoutFilter.sort(function (a, b) {
+      if (asc) {
+        return a[prop] > b[prop] ? 1 : a[prop] < b[prop] ? -1 : 0;
+      } else {
+        return b[prop] > a[prop] ? 1 : b[prop] < a[prop] ? -1 : 0;
+      }
+    });
+    this.setState({ departments: sortedData });
+  }
+
+  changeDepartmentIdFilter = (e) => {
+    this.setState({ DepartmentIdFilter: e.target.value });
+    //this.state.DepartmentIdFilter = e.target.value;
+    this.filterFn();
+  };
+
+  changeDepartmentNameFilter = (e) => {
+    this.setState({ DepartmentNameFilter: e.target.value });
+    //this.state.DepartmentNameFilter = e.target.value;
+    this.filterFn();
+  };
 
   refreshList() {
     fetch(variables.API_URL + "department")
@@ -121,7 +168,7 @@ export class Department extends Component {
       <div>
         <button
           type="button"
-          className="btn btn-primary m-2 float-end"
+          className="btn btn-sm btn-dark m-2 p-3 float-end"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
           onClick={() => this.addClick()}
@@ -131,8 +178,104 @@ export class Department extends Component {
         <table className="table table-striped shadow">
           <thead>
             <tr>
-              <th>DepartmentId</th>
-              <th>DepartmentName</th>
+              <th>
+                <div className="d-flex flex-row">
+                  <input
+                    className="form-control m-2"
+                    onChange={this.changeDepartmentIdFilter}
+                    placeholder="Filter"
+                  />
+
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-success mx-1"
+                    onClick={() => this.sortResult("DepartmentId", true)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-bar-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-info mx-1"
+                    onClick={() => this.sortResult("DepartmentId", false)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-bar-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                DepartmentId
+              </th>
+              <th>
+                <div className="d-flex flex-row">
+                  <input
+                    className="form-control m-2"
+                    onChange={this.changeDepartmentNameFilter}
+                    placeholder="Filter"
+                  />
+
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-success mx-1"
+                    onClick={() => this.sortResult("DepartmentName", true)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-bar-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline-info mx-1"
+                    onClick={() => this.sortResult("DepartmentName", false)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-arrow-bar-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                DepartmentName
+              </th>
               <th>Options</th>
             </tr>
           </thead>
@@ -144,7 +287,7 @@ export class Department extends Component {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-warning mr-1 text-white shadow"
+                    className="btn btn-sm btn-outline-warning mx-1 text-white shadow"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     onClick={() => this.editClick(dep)}
@@ -163,7 +306,7 @@ export class Department extends Component {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-danger mr-1 text-white shadow"
+                    className="btn btn-sm btn-outline-danger mx-1 text-white shadow"
                     onClick={() => this.deleteClick(dep.DepartmentId)}
                   >
                     <svg
