@@ -9,5 +9,9 @@
     <PackageReference Include="Npgsql" Version="5.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Photos\" />
+  </ItemGroup>
+
 
 </Project>
