@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Nusret\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Nusret\\.nuget\\packages"
+    ]
+  }
+}
