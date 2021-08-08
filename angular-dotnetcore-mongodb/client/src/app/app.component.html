@@ -1,4 +1,23 @@
 <div class="container">
-  <h3 class="d-flex justify-content-center">Angular 12 Front End</h3>
+  <h3 class="d-flex justify-content-center p-2">Angular 12 Front End</h3>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-secondary shadow p-2">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <button routerLink="home" class="m-1 btn btn-primary" Button>
+          Home
+        </button>
+      </li>
+      <li class="nav-item">
+        <button routerLink="department" class="m-1 btn btn-primary" Button>
+          Department
+        </button>
+      </li>
+      <li class="nav-item">
+        <button routerLink="employee" class="m-1 btn btn-primary" Button>
+          Employee
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
