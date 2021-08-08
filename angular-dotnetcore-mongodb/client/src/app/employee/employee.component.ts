@@ -91,4 +91,15 @@ export class EmployeeComponent implements OnInit {
         });
     }
   }
+
+  imageUpload(event: any) {
+    var file = event.target.files[0];
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+    this.http
+      .post(environment.API_URL + 'employee/SaveFile', formData)
+      .subscribe((data: any) => {
+        this.PhotoFileName = data.toString();
+      });
+  }
 }
