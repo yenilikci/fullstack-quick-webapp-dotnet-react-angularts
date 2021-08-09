@@ -1,6 +1,6 @@
 <button
   type="button"
-  class="btn btn-primary m-2 float-end"
+  class="btn btn-success m-3 float-end rounded"
   data-bs-toggle="modal"
   data-bs-target="#exampleModal"
   (click)="addClick()"
@@ -76,17 +76,29 @@
   aria-hidden="true"
 >
   <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
+    <div class="modal-content rounded text-warning">
+      <div class="modal-header bg-dark">
         <h5 class="modal-title" id="exampleModalLabel">
           {{ modalTitle }}
         </h5>
         <button
           type="button"
-          class="btn-close"
-          data-bs-dissmiss="modal"
-          aria-label="Close"
-        ></button>
+          class="btn btn-danger shadow mr-1"
+          data-bs-dismiss="modal"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-x-lg"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"
+            />
+          </svg>
+        </button>
       </div>
       <div class="modal-body">
         <div class="input-group mb-3">
