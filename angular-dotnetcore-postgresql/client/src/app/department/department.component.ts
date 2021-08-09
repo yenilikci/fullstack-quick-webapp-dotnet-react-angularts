@@ -11,9 +11,14 @@ export class DepartmentComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   departments: any = [];
+
   modalTitle = '';
   DepartmentId = 0;
   DepartmentName = '';
+
+  DepartmentIdFilter = '';
+  DepartmentNameFilter = '';
+  departmentsWithoutFilter: any = [];
 
   ngOnInit(): void {
     this.refreshList();
@@ -22,6 +27,7 @@ export class DepartmentComponent implements OnInit {
   refreshList() {
     this.http.get<any>(environment.API_URL + 'department').subscribe((data) => {
       this.departments = data;
+      this.departmentsWithoutFilter = data;
     });
   }
 
@@ -69,5 +75,34 @@ export class DepartmentComponent implements OnInit {
           this.refreshList();
         });
     }
+  }
+
+  FilterFn() {
+    var DepartmentIdFilter = this.DepartmentIdFilter;
+    var DepartmentNameFilter = this.DepartmentNameFilter;
+
+    this.departments = this.departmentsWithoutFilter.filter(function (el: any) {
+      return (
+        el.DepartmentId.toString()
+          .toLowerCase()
+          .includes(DepartmentIdFilter.toString().trim().toLowerCase()) &&
+        el.DepartmentName.toString()
+          .toLowerCase()
+          .includes(DepartmentNameFilter.toString().trim().toLowerCase())
+      );
+    });
+  }
+
+  sortResult(prop: any, asc: any) {
+    this.departments = this.departmentsWithoutFilter.sort(function (
+      a: any,
+      b: any
+    ) {
+      if (asc) {
+        return a[prop] > b[prop] ? 1 : a[prop] < b[prop] ? -1 : 0;
+      } else {
+        return b[prop] > a[prop] ? 1 : b[prop] < a[prop] ? -1 : 0;
+      }
+    });
   }
 }
